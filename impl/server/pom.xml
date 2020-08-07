@@ -18,7 +18,7 @@
     <simple-jndi.version>1.0.3</simple-jndi.version>
     <jmock-junit4.version>2.5.1</jmock-junit4.version>
     <pentaho-connections.version>9.2.0.0-SNAPSHOT</pentaho-connections.version>
-    <commons-beanutils.version>1.9.3</commons-beanutils.version>
+    <commons-beanutils.version>1.9.4</commons-beanutils.version>
     <pentaho-reporting.version>9.2.0.0-SNAPSHOT</pentaho-reporting.version>
     <pentaho-metadata.version>9.2.0.0-SNAPSHOT</pentaho-metadata.version>
     <commons-io.version>2.1</commons-io.version>
