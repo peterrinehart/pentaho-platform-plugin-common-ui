@@ -263,7 +263,7 @@ pentaho.userSettings.prototype.generateUniqueUrl = function(url) {
 pentaho.userSettings.prototype.getSettings = function( names, callback, caller ) {
 
   dojo.xhrGet({
-    url: this.generateUniqueUrl(CONTEXT_PATH + 'content/ws-run/UserSettingService/getUserSettingsJson'),
+    url: this.generateUniqueUrl(CONTEXT_PATH + 'plugin/pentaho-interactive-reporting/api/UserSettingService/getUserSettingsJson'),
     content: {
         settingNames : names
     },
@@ -278,7 +278,7 @@ pentaho.userSettings.prototype.getSettings = function( names, callback, caller )
 pentaho.userSettings.prototype.setSetting = function( name, value, callback, caller ) {
 
   dojo.xhrGet({
-    url: this.generateUniqueUrl(CONTEXT_PATH + 'content/ws-run/UserSettingService/setUserSettingJson'),
+    url: this.generateUniqueUrl(CONTEXT_PATH + 'plugin/pentaho-interactive-reporting/api/UserSettingService/setUserSettingJson'),
     content: {
         settingName : name,
         settingValue : value
