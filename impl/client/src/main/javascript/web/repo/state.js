@@ -267,7 +267,7 @@ pentaho.userSettings.prototype.getSettings = function( names, callback, caller )
     content: {
         settingNames : names
     },
-    load: dojo.hitch(caller, function(data) { callback(controller.getJsonFromXml(data)); }),
+    load: dojo.hitch(caller, function(data) { callback(controller.getJsonFromResult(data)); }),
     error: function(data) {alert(data)}
   });
 }
@@ -284,7 +284,7 @@ pentaho.userSettings.prototype.setSetting = function( name, value, callback, cal
         settingValue : value
     },
     load: dojo.hitch(caller, function(data) {
-      callback(controller.getJsonFromXml(data));
+      callback(controller.getJsonFromResult(data));
     }),
     error: function(data) {alert(data)}
   });
