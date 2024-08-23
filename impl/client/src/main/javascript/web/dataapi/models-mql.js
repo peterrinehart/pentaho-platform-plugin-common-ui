@@ -207,7 +207,7 @@ pentaho.pda.model.mql.prototype.discoverModelDetail = function() {
   var xml = parseXML( result );
   this.categories = [];
 
-  var nodes = xml.getElementsByTagName('return');
+  var nodes = xml.getElementsByTagName('model');
   if( nodes && nodes.length> 0 ) {
     //return this.getDetailFromNode( nodes[0], modelAccess, datasourceConfig );
     // get the categories
@@ -314,10 +314,7 @@ pentaho.pda.model.mql.prototype.submit = function( jsonString, rowLimit, callbac
   if (!rowLimit) {
     rowLimit = -1;
   }
-  var handleResultCallback = dojo.hitch(this, function(resultXml) {
-    var result = parseXML( resultXml );
-    var nodes = result.getElementsByTagName('return');
-    resultJson = this.getText( nodes[0] );
+  var handleResultCallback = dojo.hitch(this, function(resultJson) {
 //          alert(resultJson);
     var result = JSON.parse(resultJson);
     if (callback) {
@@ -357,10 +354,7 @@ pentaho.pda.model.mql.prototype.submitXmlQuery = function( queryObject, rowLimit
     var url = this.handler.METADATA_SERVICE_URL+'/doXmlQueryToCdaJson';
     var query = 'xml='+escape(xml)+'&rowLimit='+rowLimit;
 
-    var resultXml = pentahoGet( url, query );
-    var result = parseXML( resultXml );
-    var nodes = result.getElementsByTagName('return');
-    resultJson = this.getText( nodes[0] );
+    resultJson = pentahoGet( url, query );
 //            alert(resultJson);
     var result = JSON.parse(resultJson);
     return result;
